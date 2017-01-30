@@ -1,0 +1,28 @@
+Braintree training session
+
+Drop-in UI vs. Custom Fields vs. Hosted Fields
+
+- Drop-in UI doesnt allow any customizations.
+- Least risk for merchant to implement, all fields are Braintree approved.
+
+- Custom Fields allow for full customizations.
+- High risk for merchant as these fields are not vetted by Braintree beforehand.
+
+- Hosted Fields are a compromise between Drop-in and Custom.
+- Low risk for merchant to implement as all fields are sent to Braintree.
+- Allows merchant to collect credit card information.
+- Used when the merchant wants a unified look and feel for the payment method page.
+- Alternative would be a drop in UI for credit card info and a standard HTML form. - Does not have the same look and feel.
+
+Functionality on the backend can be represented in the frontend, through css styling
+- if cursor is on the next selected field, highlight.
+
+Braintree iOS SDK demo install procedure MacOSX
+- $ sudo gem install cocoapods
+To manage dependecies
+- Navigate to iOS SDK directory
+- $ pod install
+- Install dependecies
+Open "Braintree.xcworkspace"
+On toolbar->Run Braintree-Demo 
+
