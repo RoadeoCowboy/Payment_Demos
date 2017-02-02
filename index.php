@@ -22,21 +22,6 @@
 <!-- Begin Body -->
 
 <div class="jumbotron">
-  <h1>Welcome to Gluten Lovers!</h1>
-  <p>Where you can find the best items for the Gluten Lover in all of us.</p>
-
-  <div class="dropdown">
-  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    I am a...
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="buyers.html">Buyer</a></li>
-    <li><a href="sellers.html">Seller</a></li>
-  </ul>
-</div>
-
-<div class="jumbotron">
   <h1>Welcome to David's Payment Demos!</h1>
   <p>Where you can find a variety of payment demos.</p>
 
