@@ -8,7 +8,7 @@
 	<script src="https://js.braintreegateway.com/web/3.0.2/js/hosted-fields.min.js"></script>
 	<script src="https://js.braintreegateway.com/web/3.0.2/js/paypal.min.js"></script>
 	<script src="https://js.braintreegateway.com/web/3.0.2/js/data-collector.min.js"></script>
-	<link rel="stylesheet" href="http://codepen.io/braintree/pen/oLxqjd.css">
+	<link rel="stylesheet" href="//codepen.io/braintree/pen/oLxqjd.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
