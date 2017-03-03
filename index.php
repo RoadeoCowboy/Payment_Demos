@@ -33,6 +33,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <li><a href="\TechCrunchDisrupt\merchantclient.php">Braintree Hosted Fields</a></li>
     <li><a href="\V.ZeroSampleIntegration\index.php">Braintree Drop-In UI</a></li>
+    <li><a href="\BraintreeVisaCheckout\visacheckout.php">Braintree Visa Checkout</a></li>
     <li><a href="\StripeCheckout\client.php">Stripe Checkout</a></li>
     <li><a href="\VisaCheckout\index.php">Visa Checkout</a></li>
   </ul>

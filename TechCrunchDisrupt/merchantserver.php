@@ -19,9 +19,11 @@ $result = Braintree_Transaction::sale([
   ]
 ]);
 
+
 if($result->success){
 	$transaction = $result->transaction;
-	error_log("transaction status is: " . $transaction->status);
+	error_log("transaction statusss is: " . $transaction->status);
+	error_log("transaction ID: " . $transaction->id);
 	// echo($result->success)
 }
 

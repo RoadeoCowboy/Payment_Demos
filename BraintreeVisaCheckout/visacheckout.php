@@ -2,9 +2,9 @@
 <html>
 <head>
 	<!-- Load the required client component. -->
-	<script src="https://js.braintreegateway.com/web/3.6.3/js/client.min.js"></script>
+	<script src="https://js.braintreegateway.com/web/3.9.0/js/client.min.js"></script>
 	<!-- Load additional components if desired. -->
-	<script src="https://js.braintreegateway.com/web/3.6.3/js/visa-checkout.min.js"></script>
+	<script src="https://js.braintreegateway.com/web/3.9.0/js/visa-checkout.min.js"></script>
 </head>
 
 <title>Braintree's Visa Checkout</title>
@@ -55,6 +55,7 @@
 });
 
 function visaCheckoutInitialized(visaCheckoutInstance) {
+  alert('V VisaCheckout ready!')
    var baseInitOptions = {
     paymentRequest: {
       currencyCode: "USD",
@@ -63,7 +64,8 @@ function visaCheckoutInitialized(visaCheckoutInstance) {
   };
 
   // Populate init options with options Braintree requires.
-  var initOptions = visaCheckoutInstance.createInitOptions(baseInitOptions);
+ var initOptions = visaCheckoutInstance.createInitOptions(baseInitOptions);
+  V.init(initOptions);
 
   // Ready to start Visa Checkout.
     V.on("payment.success", function (payment) {
