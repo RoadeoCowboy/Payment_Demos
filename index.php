@@ -36,6 +36,7 @@
     <li><a href="\BraintreeVisaCheckout\visacheckout.php">Braintree Visa Checkout</a></li>
     <li><a href="\StripeCheckout\client.php">Stripe Checkout</a></li>
     <li><a href="\VisaCheckout\index.php">Visa Checkout</a></li>
+    <li><a href="\AdyenCheckout\adyenclient.php">Adyen Checkout</a></li>
   </ul>
 </div>
 
