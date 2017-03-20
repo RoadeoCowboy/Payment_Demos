@@ -8,7 +8,7 @@
   </head>
   <body>
         
-        <form method="POST" action="#handler" id="adyen-encrypted-form">
+        <form method="POST" action="adyenserver.php" id="adyen-encrypted-form">
             <fieldset>
                 <legend>Card Details</legend>
                 <div class="field">
