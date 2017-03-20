@@ -9,7 +9,7 @@
 <body>
 
 
-	<form method="POST" action="#handler" id="adyen-encrypted-form">
+	<form method="POST" action="adyenserver.php" id="adyen-encrypted-form">
     <input type="text" size="20" autocomplete="off" data-encrypted-name="number" />
     <input type="text" size="20" autocomplete="off" data-encrypted-name="holderName" />
     <input type="text" size="2" maxlength="2" autocomplete="off" data-encrypted-name="expiryMonth" />
