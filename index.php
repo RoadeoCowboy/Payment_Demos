@@ -37,7 +37,6 @@
     <li><a href="\StripeCheckout\client.php">Stripe Checkout</a></li>
     <li><a href="\VisaCheckout\index.php">Visa Checkout</a></li>
     <li><a href="\AdyenCheckout\adyenclient.php">Adyen Checkout</a></li>
-    <li><a href="\adyen-cse-web-master\adyen.encrypt.simple.php">Adyen CSE</a></li>
   </ul>
 </div>
 
