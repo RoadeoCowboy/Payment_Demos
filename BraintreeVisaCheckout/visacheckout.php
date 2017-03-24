@@ -78,7 +78,13 @@ function visaCheckoutInitialized(visaCheckoutInstance) {
         $.post("visaserver.php",
         {
           nonceToServer: tokenizePayload
-        })
+        },
+        function(data, status) {
+          if(status == "success") {
+            alert("Transaction with Visa Checkout Successful!");
+          }
+        }
+        );
         console.log('tokenizePayload', tokenizePayload);
       }
     });
