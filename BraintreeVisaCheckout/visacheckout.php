@@ -5,6 +5,7 @@
 	<script src="https://js.braintreegateway.com/web/3.9.0/js/client.min.js"></script>
 	<!-- Load additional components if desired. -->
 	<script src="https://js.braintreegateway.com/web/3.9.0/js/visa-checkout.min.js"></script>
+  <script type="test/javascript" src="jquery/jquery-1.12.1.min.js"></script>
 </head>
 
 <title>Braintree's Visa Checkout</title>
@@ -74,6 +75,10 @@ function visaCheckoutInitialized(visaCheckoutInstance) {
         console.error('Error during Visa Checkout tokenization', tokenizeErr);
       } else {
         // Send this to your server, and create a transaction there.
+        $.post("visaserver.php",
+        {
+          payment-method-nonce: tokenizePayload
+        })
         console.log('tokenizePayload', tokenizePayload);
       }
     });
