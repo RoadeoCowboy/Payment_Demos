@@ -7,7 +7,7 @@ Braintree_Configuration::merchantId('k8cqxzf43pkmt3vk');
 Braintree_Configuration::publicKey('d5nfy46p5m5rj2jj');
 Braintree_Configuration::privateKey('ec98ec5d3511ca20d14414882f25eac5');
 
-$nonce = $_POST["payment-method-nonce"];
+$nonce = $_POST["nonceToServer"];
 
 error_log("nonce is: " . $nonce);   
 
