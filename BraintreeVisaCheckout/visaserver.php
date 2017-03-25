@@ -14,9 +14,9 @@ $nonce = $_POST["nonceToServer"];
 error_log("nonce is: " . print_r($nonce));   
 
 $vaultResult = Braintree_Customer::create(array(
-    'firstName' => $_POST["first_name"],
-    'lastName' => $_POST["last_name"],
-    'paymentMethodNonce' => $nonce,
+    'firstName' => "David",
+    'lastName' => "Chen",
+    'paymentMethodNonce' => $nonce
 ));
 
 //Using Vault Customer id to create the transaction.
