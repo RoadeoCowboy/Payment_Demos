@@ -19,7 +19,9 @@
 		Braintree_Configuration::publicKey('d5nfy46p5m5rj2jj');
 		Braintree_Configuration::privateKey('ec98ec5d3511ca20d14414882f25eac5');
 		
-		$clientToken = Braintree_ClientToken::generate();
+		$clientToken = Braintree_ClientToken::generate([]
+        'customerId' => 33001552
+      ]);
 	?>
 
 	<script>
