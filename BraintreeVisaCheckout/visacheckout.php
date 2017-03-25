@@ -78,7 +78,7 @@ function visaCheckoutInitialized(visaCheckoutInstance) {
         $.post("visaserver.php",
         {
           nonceToServer: tokenizePayload.nonce
-          customerInfo: tokenizePayload.userData
+          // customerInfo: tokenizePayload.userData
         },
         function(data, status) {
           if(status == "success") {
