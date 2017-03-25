@@ -77,7 +77,7 @@ function visaCheckoutInitialized(visaCheckoutInstance) {
         // Send this to your server, and create a transaction there.
         $.post("visaserver.php",
         {
-          nonceToServer: tokenizePayload
+          nonceToServer: tokenizePayload.nonce
         },
         function(data, status) {
           if(status == "success") {
