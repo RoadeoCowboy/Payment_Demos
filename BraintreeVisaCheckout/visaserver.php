@@ -9,7 +9,7 @@ Braintree_Configuration::privateKey('ec98ec5d3511ca20d14414882f25eac5');
 
 $nonce = $_POST["nonceToServer"];
 
-error_log("nonce is: " . $nonce);   
+error_log("nonce is: " . print_r($nonce));   
 
 $result = Braintree_Transaction::sale([
   'amount' => 10,
