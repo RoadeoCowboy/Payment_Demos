@@ -5,7 +5,7 @@
 	<script src="https://js.braintreegateway.com/web/3.9.0/js/client.min.js"></script>
 	<!-- Load additional components if desired. -->
 	<script src="https://js.braintreegateway.com/web/3.9.0/js/visa-checkout.min.js"></script>
-  <script type="test/javascript" src="jquery/jquery-1.12.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <title>Braintree's Visa Checkout</title>
