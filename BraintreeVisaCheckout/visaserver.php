@@ -16,6 +16,7 @@ error_log("nonce is: " . print_r($nonce));
 $vaultResult = Braintree_Customer::create(array(
     'firstName' => "David",
     'lastName' => "Chen",
+    'company' => "company",
     'paymentMethodNonce' => $nonce
 ));
 
