@@ -13,23 +13,32 @@ $nonce = $_POST["nonceToServer"];
 
 error_log("nonce is: " . print_r($nonce));   
 
-$vaultResult = Braintree_Customer::create(array(
-    'firstName' => "David",
-    'lastName' => "Chen",
-    'company' => "company",
-    'paymentMethodNonce' => $nonce
-));
+// $vaultResult = Braintree_Customer::create(array(
+//     'firstName' => "David",
+//     'lastName' => "Chen",
+//     'company' => "company",
+//     'paymentMethodNonce' => $nonce
+// ));
 
-//Using Vault Customer id to create the transaction.
-$transactionResult = Braintree_Transaction::sale(
-  array(
-    'customerId' => $vaultResult->customer->id,
-    'amount' => 10,
-    'options' => [
-        'submitForSettlement' => True
-  	]
-  )
-);
+// //Using Vault Customer id to create the transaction.
+// $transactionResult = Braintree_Transaction::sale(
+//   array(
+//     'customerId' => $vaultResult->customer->id,
+//     'amount' => 10,
+//     'options' => [
+//         'submitForSettlement' => True
+//   	]
+//   )
+// );
+
+$result = Braintree_Transaction::sale([
+  'amount' => '10.00',
+  'paymentMethodNonce' => $nonce,
+  'options' => [
+    'submitForSettlement' => True,
+    'storeInVaultOnSuccess' => True
+  ]
+]);
 
 if($result->success){
 	$transaction = $result->transaction;
