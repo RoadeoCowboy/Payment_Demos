@@ -8,17 +8,27 @@ Braintree_Configuration::publicKey('d5nfy46p5m5rj2jj');
 Braintree_Configuration::privateKey('ec98ec5d3511ca20d14414882f25eac5');
 
 $nonce = $_POST["nonceToServer"];
+// $firstName = $_POST["first_name"];
+// $lastName = $_POST["last_name"];
 
 error_log("nonce is: " . print_r($nonce));   
 
-$result = Braintree_Transaction::sale([
-  'amount' => 10,
-  'paymentMethodNonce' => $nonce,
-  'options' => [
-    'submitForSettlement' => False
-  ]
-]);
+$vaultResult = Braintree_Customer::create(array(
+    'firstName' => $_POST["first_name"],
+    'lastName' => $_POST["last_name"],
+    'paymentMethodNonce' => $nonce,
+));
 
+//Using Vault Customer id to create the transaction.
+$transactionResult = Braintree_Transaction::sale(
+  array(
+    'customerId' => $vaultResult->customer->id,
+    'amount' => 10,
+    'options' => [
+        'submitForSettlement' => True
+  	]
+  )
+);
 
 if($result->success){
 	$transaction = $result->transaction;
