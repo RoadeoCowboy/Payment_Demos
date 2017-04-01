@@ -1,0 +1,123 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: rikt
+ * Date: 11/18/15
+ * Time: 12:01 PM
+ */
+
+namespace Adyen;
+
+class ExceptionTest extends \Adyen\TestCase
+{
+
+    public function testExceptionMissingValuesToParams()
+    {
+        // initialize client
+        $client = $this->createClient();
+
+        // initialize service
+        $service = new Service\Payment($client);
+
+        $json = '{
+              "card": {
+                "number": "",
+                "expiryMonth": "",
+                "expiryYear": "",
+                "cvc": "",
+                "holderName": ""
+              },
+              "amount": {
+                "value": "",
+                "currency": ""
+              },
+              "reference": "",
+              "merchantAccount": ""
+            }';
+
+        $params = json_decode($json, true);
+        $e = null;
+        try {
+            $result = $service->authorise($params);
+        } catch (\Exception $e) {
+
+        }
+
+        $this->assertEquals('Adyen\AdyenException', get_class($e));
+        $this->assertEquals('Missing the following values: merchantAccount,amount.value,amount.currency,reference', $e->getMessage());
+
+
+
+    }
+    public function testExceptionMissingEnvironmentValue()
+    {
+        $client = new \Adyen\Client();
+        $client->setApplicationName("My Test Application");
+        $client->setUsername('username');
+        $client->setPassword('password');
+        // do not set environment to test exception
+
+
+        try {
+            $service = new Service\Recurring($client);
+        } catch(\Exception $e) {
+        }
+
+        // should have environment exception
+        $this->assertEquals('Adyen\AdyenException', get_class($e));
+        $this->assertEquals('The Client does not have a corect environment. use test or live', $e->getMessage());
+
+    }
+
+    public function testExceptionMisspelledContractParameterValue()
+    {
+
+        // initialize client
+        $client = $this->createClient();
+
+        // initialize service
+        $service = new Service\Recurring($client);
+
+        $recurring = array('contract' => "WRONG PARAMETER");
+        $params = array('merchantAccount' => $this->getMerchantAccount(), 'recurring' => $recurring, 'shopperReference' => '1');
+
+        try {
+            $result = $service->listRecurringDetails($params);
+        } catch (\Exception $e){
+        }
+
+        // check if exception is correct
+        $this->assertEquals('Adyen\AdyenException', get_class($e));
+        $this->assertEquals('Invalid contract', $e->getMessage());
+        $this->assertEquals('802', $e->getCode());
+    }
+
+    public function testExceptionMissingUsernamePassword()
+    {
+        // initialize client
+        $client = new \Adyen\Client();
+        $client->setApplicationName("Adyen PHP Api Library");
+        $client->setUsername("");
+        $client->setPassword("");
+        $client->setEnvironment(\Adyen\Environment::TEST);
+
+        // initialize service
+        $service = new Service\Recurring($client);
+
+        // in a model form ?
+        $recurring = array('contract' => \Adyen\Contract::RECURRING);
+        $params = array('merchantAccount' => $this->getMerchantAccount(), 'recurring' => $recurring, 'shopperReference' => '1');
+
+        $e = null;
+        try {
+            $result = $service->listRecurringDetails($params);
+        } catch (\Exception $e){
+
+        }
+
+        // check if exception is correct
+        $this->assertEquals('Adyen\AdyenException', get_class($e));
+        $this->assertEquals("Probably your Web Service username and/or password is incorrect\n(Network error [errno 0]: )", $e->getMessage());
+        $this->assertEquals('0', $e->getCode());
+    }
+}

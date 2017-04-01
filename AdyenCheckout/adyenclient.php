@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/cse-example-form.css" type="text/css" />
     <!-- <link rel="stylesheet" href="css/adyen.cardtype.css" type="text/css" /> -->
+    <!-- Library Key: 10001|9DED9E0DF79B72406450C5830681F47806838D99FCCFB9ABC6AFC8A25D71C2598F9BCF2B033D006DE5450299EE5A5949C4B22F41383BAC46D3DA7202BE3E5849B5FF44DC4314F1550C423B32A390AA76478476E2C0162A2B5BDBC0FB0AF12C232B2C76805A8DE70A56913A8F6A19D038D459C9709B57E9389783167EDDFD81E8B20B9373F8A7583A468E872656BC8CBF2446110A93538DB222BA6A5043F8F9262D7E8B91FAE818572FDB217E4E139B01029C319F2EDBB118EC0718ED1290BF5134056485D684B27177DA9BFEB5886E1F5B455543AA246D06D33E81CAAE7173B024CEB35F7967EC0303609D8A12739BAF24BCA22CC4682847BD1FD614659095E3 -->
   </head>
   <body>
         
@@ -22,7 +23,7 @@
                 <div class="field">
                     <label for="adyen-encrypted-form-cvc">
                         <span>CVC</span>
-                        <input type="text" id="adyen-encrypted-form-cvc" value="321" size="4" maxlength="4" autocomplete="off" data-encrypted-name="cvc" />
+                        <input type="text" id="adyen-encrypted-form-cvc" value="737" size="4" maxlength="4" autocomplete="off" data-encrypted-name="cvc" />
                     </label>
                 </div>
                 
@@ -36,10 +37,10 @@
                 <div class="field">
                     <label for="adyen-encrypted-form-expiry-month">
                         <span>Expiration (MM/YYYY)</span>
-                        <input type="text" value="10"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> / 
+                        <input type="text" value="08"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> / 
                     </label>
                     <!-- Do not use two input elements inside a single label. This will cause focus issues on the seoncd and latter fields using the mouse in various browsers -->
-                    <input type="text" value="2017" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
+                    <input type="text" value="2018" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
                 </div>
 
                 <input type="hidden" id="adyen-encrypted-form-expiry-generationtime" value="generate-this-server-side" data-encrypted-name="generationtime" />
@@ -63,15 +64,7 @@
             var form    = document.getElementById('adyen-encrypted-form');
             
             // the public key
-            var key     =   "10001|80C7821C961865FB4AD23F172E220F819A5CC7B9956BC3458E2788"
-                            + "F9D725B07536E297B89243081916AAF29E26B7624453FC84CB10FC7DF386"
-                            + "31B3FA0C2C01765D884B0DA90145FCE217335BCDCE4771E30E6E5630E797"
-                            + "EE289D3A712F93C676994D2746CBCD0BEDD6D29618AF45FA6230C1D41FE1"
-                            + "DB0193B8FA6613F1BD145EA339DAC449603096A40DC4BF8FACD84A5D2CA5"
-                            + "ECFC59B90B928F31715A7034E7B674E221F1EB1D696CC8B734DF7DE2E309"
-                            + "E6E8CF94156686558522629E8AF59620CBDE58327E9D84F29965E4CD0FAF"
-                            + "A38C632B244287EA1F7F70DAA445D81C216D3286B09205F6650262CAB415"
-                            + "5F024B3294A933F4DC514DE0B5686F6C2A6A2D"; 
+            var key     =   "10001|9DED9E0DF79B72406450C5830681F47806838D99FCCFB9ABC6AFC8A25D71C2598F9BCF2B033D006DE5450299EE5A5949C4B22F41383BAC46D3DA7202BE3E5849B5FF44DC4314F1550C423B32A390AA76478476E2C0162A2B5BDBC0FB0AF12C232B2C76805A8DE70A56913A8F6A19D038D459C9709B57E9389783167EDDFD81E8B20B9373F8A7583A468E872656BC8CBF2446110A93538DB222BA6A5043F8F9262D7E8B91FAE818572FDB217E4E139B01029C319F2EDBB118EC0718ED1290BF5134056485D684B27177DA9BFEB5886E1F5B455543AA246D06D33E81CAAE7173B024CEB35F7967EC0303609D8A12739BAF24BCA22CC4682847BD1FD614659095E3"; 
  
             var options = {};
             
