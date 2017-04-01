@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>David'd Adyen Payment</title>
+    <title>David's Adyen Payment</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/cse-example-form.css" type="text/css" />
     <!-- <link rel="stylesheet" href="css/adyen.cardtype.css" type="text/css" /> -->

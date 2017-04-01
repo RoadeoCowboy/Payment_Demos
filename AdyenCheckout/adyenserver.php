@@ -2,7 +2,7 @@
 
  
  if(isset($_POST['adyen-encrypted-data'])){
- 	echo ("Server Data Received! <br>");
+ 	// echo ("Server Data Received! <br>");
 
  		 /**
 	  * The payment can be submitted by sending a PaymentRequest 
@@ -64,7 +64,23 @@
 		 * - authCode: An authorisation code if the payment was successful, or blank otherwise;
 		 * - refusalReason: If the payment was refused, the refusal reason.
 		 */ 
-		print_r(json_decode($result));
+		error_log($result);
+		$outputArray = json_decode($result, true);
+		// print_r(json_decode($result));
+	
+		if($outputArray['resultCode'] == "Authorised"){
+			echo "Payment Success! </br>";
+			echo "</br>";
+			echo "Your authCode: " . $outputArray['authCode'];
+		}
+		else if ($outputArray['resultCode'] == "Refused"){
+			echo "Payment Refused! </br>";
+			echo "</br>";
+			echo "Your resultReason: " . $outputArray['refusalReason'];
+		}
+		else {
+			echo "You Have Some Other Error!";
+		}
 	 }
 	 
 	 curl_close($ch);
