@@ -26,7 +26,6 @@
             <input type="text" size="4" value="YYYY" data-encrypted-name="expiryYear"/>
             <input type="text" size="4" value="CVC" data-encrypted-name="cvc"/>
             <input type="hidden" value="<?php echo $time; ?>" data-encrypted-name="generationtime"/>
-            alert("<?php echo $time; ?>");
             <input type="submit" value="Pay"/>
         </form>
 <script>
