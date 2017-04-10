@@ -3,7 +3,7 @@
   <head>
     <title>David's Adyen Payment</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="css/cse-example-form.css" type="text/css" />
+   <!--  <link rel="stylesheet" href="css/cse-example-form.css" type="text/css" /> -->
   </head>
   <!-- <script src="https://test.adyen.com/hpp/cse/js/8214884821962225/ui.shtml?theme=dark" async></script> -->
   <body>
@@ -14,8 +14,8 @@
     ?>
 
     <legend>Hosted Payment Page</legend>
-        <form method="POST" action="adyenserver.php" id="adyen-encrypted-form">
-            <input type="text" size="20" value="Card Number"data-encrypted-name="number"/>
+        <form method="POST" action="adyenserver.php" id="adyen-encrypted-form-hpp">
+            <input type="text" size="20" value="Card Number" data-encrypted-name="number"/>
             <input type="text" size="20" value="Card Holder Name" data-encrypted-name="holderName"/>
             <input type="text" size="2" value="MM" data-encrypted-name="expiryMonth"/>
             <input type="text" size="4" value="YYYY" data-encrypted-name="expiryYear"/>
@@ -24,14 +24,18 @@
             <input type="submit" value="Pay"/>
         </form>
 <script>
+
+ // document.getElementById('adyen-encrypted-form-expiry-generationtime').value = new Date().toISOString();
+ 
 // The form element to encrypt.
-var form = document.getElementById('adyen-encrypted-form');
+var form = document.getElementById('adyen-encrypted-form-hpp');
 // See https://github.com/Adyen/CSE-JS/blob/master/Options.md for details on the options to use.
 var options = {};
 // Bind encryption options to the form.
 adyen.createEncryptedForm(form, options);
+
 </script> 
-    <form method="POST" action="adyenserver.php" id="adyen-encrypted-form">
+    <form method="POST" action="adyenserver.php" id="adyen-encrypted-form-cse">
         <fieldset>
             <legend>Client Side Encryption</legend>
             <div class="field">
@@ -83,7 +87,7 @@ adyen.createEncryptedForm(form, options);
             document.getElementById('adyen-encrypted-form-expiry-generationtime').value = new Date().toISOString();
         
             // the form element to encrypt
-            var form    = document.getElementById('adyen-encrypted-form');
+            var form    = document.getElementById('adyen-encrypted-form-cse');
             
             // the public key
             var key     =   "10001|9DED9E0DF79B72406450C5830681F47806838D99FCCFB9ABC6AFC8A25D71C2598F9BCF2B033D006DE5450299EE5A5949C4B22F41383BAC46D3DA7202BE3E5849B5FF44DC4314F1550C423B32A390AA76478476E2C0162A2B5BDBC0FB0AF12C232B2C76805A8DE70A56913A8F6A19D038D459C9709B57E9389783167EDDFD81E8B20B9373F8A7583A468E872656BC8CBF2446110A93538DB222BA6A5043F8F9262D7E8B91FAE818572FDB217E4E139B01029C319F2EDBB118EC0718ED1290BF5134056485D684B27177DA9BFEB5886E1F5B455543AA246D06D33E81CAAE7173B024CEB35F7967EC0303609D8A12739BAF24BCA22CC4682847BD1FD614659095E3"; 
