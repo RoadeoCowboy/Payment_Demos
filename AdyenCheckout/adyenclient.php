@@ -12,7 +12,7 @@
     <?php
         $time = $_SERVER['REQUEST_TIME'];
     ?>
-
+ 
     <legend>Hosted Payment Page</legend>
         <form method="POST" action="adyenserver.php" id="adyen-encrypted-form-hpp">
             <input type="text" size="20" value="Card Number" data-encrypted-name="number"/>
@@ -20,13 +20,13 @@
             <input type="text" size="2" value="MM" data-encrypted-name="expiryMonth"/>
             <input type="text" size="4" value="YYYY" data-encrypted-name="expiryYear"/>
             <input type="text" size="4" value="CVC" data-encrypted-name="cvc"/>
-            <input type="hidden" value="<?php echo $time; ?>" data-encrypted-name="generationtime"/>
+            <input type="hidden" value="<?php echo $time; ?>" data-encrypted-name="generationtime" id="adyen-encrypted-form-expiry-generationtime"/>
             <input type="submit" value="Pay"/>
         </form>
 <script>
 
- // document.getElementById('adyen-encrypted-form-expiry-generationtime').value = new Date().toISOString();
- 
+ document.getElementById('adyen-encrypted-form-expiry-generationtime').value = new Date().toISOString();
+
 // The form element to encrypt.
 var form = document.getElementById('adyen-encrypted-form-hpp');
 // See https://github.com/Adyen/CSE-JS/blob/master/Options.md for details on the options to use.
