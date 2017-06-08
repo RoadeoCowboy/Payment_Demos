@@ -19,6 +19,7 @@ $result = Braintree_Transaction::sale([
   ]
 ]);
 
+error_log(print_r($result, true));
 
 if($result->success){
 	$transaction = $result->transaction;
@@ -29,3 +30,4 @@ if($result->success){
 
 
 ?>
+
