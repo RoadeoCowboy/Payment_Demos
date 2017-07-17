@@ -40,6 +40,7 @@
      <li><a href=".\PayPal_Marketplaces\index.php">PayPal Marketplaces</a></li>
      <li><a href=".\StripeConnect\onboarding.php">Stripe Connect</a></li>
      <li><a href=".\LoadSubscriptions\loadcsv.php">Load Subscriptions</a></li>
+     <li><a href=".\Amazon\sample.php">Amazon</a></li>
   </ul>
 </div>
 

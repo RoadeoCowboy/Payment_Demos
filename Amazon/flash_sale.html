@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Flash Site</title>
+   
+</head>
+<body>
+    <table><tr><td><img width="250" height="100" src="http://img.tennis-warehouse.com/watermark/rs.php?path=HNPBLF-1.jpg&nw=350" /></td></tr></table>
+    <table>
+          <tr><td><p id="titlediv"></p></td></tr>
+		  <tr><td>Product name:</td><td>Blue Shoe</td></tr>
+          <tr><td>Price:</td><td>10</td></tr>
+          <tr><td>Time remaining in sale: <p id="timeval"></p></td></tr>
+    </table>
+
+
+	<button id="myBtn" onclick="myFunction()">BUY NOW!</button>
+
+     <script type="text/javascript">
+        document.getElementById("titlediv").innerHTML = "Simple flash sale detail page";
+        
+        var seconds = 10;
+
+        var myVar=setInterval(function(){myTimer()},1000);
+
+        function myTimer() {
+            document.getElementById('timeval').innerHTML = seconds + " seconds";
+            if (seconds == 0) {
+                clearInterval(myTimer);
+                document.getElementById('myBtn').disabled = true;
+                document.getElementById("message").innerHTML = "Too Late!"
+            } else {
+                seconds--;
+            }
+
+        }
+    </script>
+
+<p id="message"></p>
+
+<script>
+function myFunction() {
+    var slogan = "The early shopper gets the bargain!";
+    document.getElementById("message").innerHTML = slogan;
+    document.getElementById('myBtn').disabled = true;
+    clearInterval(myVar);
+}
+</script>
+</body>
+</html>
