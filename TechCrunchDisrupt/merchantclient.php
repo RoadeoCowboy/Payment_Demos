@@ -146,7 +146,7 @@ braintree.client.create({
  	document.querySelector('input[name="payment-method-nonce"]').value = payload.nonce;
         // form.submit();
         $.ajax({
-        	url: './MerchantServer.php',
+        	url: './merchantserver.php',
         	type: 'POST',
         	data: { 'payment-method-nonce' : payload.nonce},
         	success: function(data) {
