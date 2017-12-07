@@ -41,6 +41,7 @@
      <li><a href=".\StripeConnect\onboarding.php">Stripe Connect</a></li>
      <li><a href=".\LoadSubscriptions\loadcsv.php">Load Subscriptions</a></li>
      <li><a href=".\Amazon\sample.php">Amazon</a></li>
+     <li><a href=".\PaymentRequestAPI\client.php">BT_PaymentRequest_API</a></li>
   </ul>
 </div>
 
