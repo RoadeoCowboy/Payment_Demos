@@ -31,7 +31,7 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <li><a href=".\Zilla-Rest\index.html">Sample Store</a></li>
+    <li><a href=".\Zilla-Rest\store\index.html">Sample Store</a></li>
     <li><a href=".\TechCrunchDisrupt\merchantclient.php">Braintree Hosted Fields</a></li>
     <li><a href=".\V.ZeroSampleIntegration\index.php">Braintree Drop-In UI</a></li>
     <li><a href=".\BraintreeVisaCheckout\visacheckout.php">Braintree Visa Checkout</a></li>
