@@ -5,15 +5,16 @@
 </head>
 
 <body>
+<?php require_once('./config.php'); ?>
 
 <form action="server.php" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_DZLiSkcDLQbY8OGWmHhnYvdn"
+    data-key="<?php echo $stripe['publishable_key']; ?>"
     data-amount="999"
-    data-name="Demo Site"
-    data-zip-code="true"
+    data-name="David's Payment Shack"
     data-description="Widget"
+    data-zip-code="true"
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
     data-locale="auto">
   </script>

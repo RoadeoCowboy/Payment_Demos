@@ -12,7 +12,7 @@ $nonce = $_POST["payment-method-nonce"];
 error_log("nonce is: " . $nonce);   
 
 $result = Braintree_Transaction::sale([
-  'amount' => 20,
+  'amount' => 2000,
   'paymentMethodNonce' => $nonce,
   'options' => [
     'submitForSettlement' => True
