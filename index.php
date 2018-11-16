@@ -42,7 +42,7 @@
      <li><a href=".\LoadSubscriptions\loadcsv.php">Load Subscriptions</a></li>
      <li><a href=".\Amazon\sample.php">Amazon</a></li>
      <li><a href=".\PaymentRequestAPI\client.php">BT_PaymentRequest_API</a></li>
-     <li><a href=".\Zilla-Rest\store\index.html">Sample Store</a></li>
+     <li><a href=".\Zilla-Rest\index.html">Sample Store</a></li>
   </ul>
 </div>
 
