@@ -31,6 +31,7 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><a href=".\Zilla-Rest\index.html">Sample Store</a></li>
     <li><a href=".\TechCrunchDisrupt\merchantclient.php">Braintree Hosted Fields</a></li>
     <li><a href=".\V.ZeroSampleIntegration\index.php">Braintree Drop-In UI</a></li>
     <li><a href=".\BraintreeVisaCheckout\visacheckout.php">Braintree Visa Checkout</a></li>
@@ -42,7 +43,6 @@
      <li><a href=".\LoadSubscriptions\loadcsv.php">Load Subscriptions</a></li>
      <li><a href=".\Amazon\sample.php">Amazon</a></li>
      <li><a href=".\PaymentRequestAPI\client.php">BT_PaymentRequest_API</a></li>
-     <li><a href=".\Zilla-Rest\index.html">Sample Store</a></li>
   </ul>
 </div>
 
