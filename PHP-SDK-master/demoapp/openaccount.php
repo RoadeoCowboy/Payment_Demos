@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$account = $wepay->request('account/create', array(
 				'name' => $_POST['account_name'],
 				'description' => $_POST['account_description'],
-				'callback_uri' => "http://localhost:8888/Payment_Demos/PHP-SDK-master/demoapp/webhook.php"
+				'callback_uri' => "http://aqueous-taiga-51771.herokuapp.com/Payment_Demos/PHP-SDK-master/demoapp/webhook.php"
 			));
 			// WePay sanitizes its own data, but displaying raw POST data on your own site is a XSS security hole.
 			$name = htmlspecialchars($_POST['account_name']);
