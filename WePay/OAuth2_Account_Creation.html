@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+<a id="start_oauth2">Click here to create your WePay account</a>
+
+<body>
+<script src="https://static.wepay.com/min/js/wepay.v2.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+WePay.set_endpoint("stage"); // stage or production
+
+WePay.OAuth2.button_init(document.getElementById('start_oauth2'), {
+    "client_id":"98172",
+     "scope":["manage_accounts","collect_payments","view_user","send_money","preapprove_payments"],
+    "user_name":"test user",
+    "user_email":"roadeocowboy@hotmail.com",
+    "redirect_uri":"http://localhost:8888/Payment_Demos/WePay/Account_Connected.html",
+    "top":100, // control the positioning of the popup with the top and left params
+    "left":100,
+    "state":"robot", // this is an optional parameter that lets you persist some state value through the flow
+    "callback":function(data) {
+		/** This callback gets fired after the user clicks "grant access" in the popup and the popup closes. The data object will include the code which you can pass to your server to make the /oauth2/token call **/
+		if (data.code.length !== 0) {
+            console.log(data.code);
+			// send the data to the server
+            $.ajax({
+                async: true,
+                type: 'POST',
+                url: "./server.php",
+                data:{code: data.code},
+                success: function(response){
+                    var obj = JSON.parse(response);
+                    // console.log(obj.access_token);
+                    console.log(obj);
+                    var checkoutURI = obj.hosted_checkout.checkout_uri;
+                    var checkoutID = obj.checkout_id;
+                    console.log(obj.hosted_checkout.checkout_uri);
+                    // window.open(WePay.iframe_checkout("wepay_checkout", checkoutURI));
+                    WePay.iframe_checkout("wepay_checkout", checkoutURI)
+                },
+                error: function(response){
+                    console.log(response);
+                    alert("Error in sending data to Server");
+                }
+            });
+		} else {
+			// an error has occurred and will be in data.error
+		}
+	}
+});
+
+</script>
+
+<div id="wepay_checkout"></div>
+<script type="text/javascript" src="https://www.wepay.com/min/js/iframe.wepay.js">
+</script>
+
+</body>
+</html>

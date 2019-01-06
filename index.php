@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <title>David's Payment Shack</title>
@@ -38,11 +37,14 @@
     <li><a href=".\StripeCheckout\client.php">Stripe Checkout</a></li>
     <li><a href=".\VisaCheckout\index.php">Visa Checkout</a></li>
     <li><a href=".\AdyenCheckout\adyenclient.php">Adyen Checkout</a></li>
-     <li><a href=".\PayPal_Marketplaces\index.php">PayPal Marketplaces</a></li>
-     <li><a href=".\StripeConnect\ConnectClient.php">Stripe Connect</a></li>
-     <li><a href=".\LoadSubscriptions\loadcsv.php">Load Subscriptions</a></li>
-     <li><a href=".\Amazon\sample.php">Amazon</a></li>
-     <li><a href=".\PaymentRequestAPI\client.php">BT_PaymentRequest_API</a></li>
+   <li><a href=".\PayPal_Marketplaces\index.php">PayPal Marketplaces</a></li>
+   <li><a href=".\StripeConnect\ConnectClient.php">Stripe Connect</a></li>
+   <li><a href=".\LoadSubscriptions\loadcsv.php">Load Subscriptions</a></li>
+   <li><a href=".\Amazon\sample.php">Amazon</a></li>
+   <li><a href=".\PaymentRequestAPI\client.php">BT_PaymentRequest_API</a></li>
+   <li><a href=".\WePay\OAuth2_Account_Creation.html">WePay_Account Sign Up</a></li>
+   <li><a href=".\PHP-SDK-master\demoapp\index.php">WePay_Account_Demo</a></li>
+   <li><a href=".\PHP-SDK-master\iframe_demoapp">WePay_Checkout_Demo</a></li>
   </ul>
 </div>
 
