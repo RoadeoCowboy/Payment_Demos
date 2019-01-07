@@ -38,7 +38,8 @@
         'short_description' => 'Services rendered by freelancer',
         'type'              => 'service',
         'currency'          => 'USD',
-        'hosted_checkout' => ['mode' => "iframe"]
+        'hosted_checkout' => ['mode' => "iframe"],
+        'callback_uri' => 'http://aqueous-taiga-51771.herokuapp.com/Payment_Demos/PHP-SDK-master/demoapp/webhook.php'
     ));
 
     $responseJSON = json_encode($response);
@@ -46,8 +47,8 @@
 	echo $responseJSON;
 
 	$responseIPN = $wepay->request('checkout', array(
-		// 'checkout_id'	=> $response->checkout_id
-		'checkout_id' 	=> '1768820240'
+		'checkout_id'	=> $response->checkout_id
+		// 'checkout_id' 	=> '1768820240'
 	));
 
 	error_log(print_r($responseIPN, true));

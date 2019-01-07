@@ -12,8 +12,8 @@
  */
 $client_id = "98172";
 $client_secret = "780f9630a5";
-$access_token = "STAGE_3475f804a9048c535f895487f41b69232988b78eb4c80092f6779897821a3cff";
-$account_id = "2029382887"; // you can find your account ID via list_accounts.php which users the /account/find call
+$access_token = "STAGE_3ed9f1d6d408b9fe0ca6a7da31a4ee86b46cee102180dc8ad105601f14a74ffb";
+$account_id = "999211425"; // you can find your account ID via list_accounts.php which users the /account/find call
 
 /** 
  * Initialize the WePay SDK object 
