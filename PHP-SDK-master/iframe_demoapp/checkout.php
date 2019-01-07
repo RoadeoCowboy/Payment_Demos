@@ -41,6 +41,13 @@ try {
 	$error = $e->getMessage();
 }
 
+$responseIPN = $wepay->request('checkout', array(
+		'checkout_id'	=> $checkout->checkout_id
+		// 'checkout_id' 	=> '1768820240'
+	));
+
+	error_log(print_r($responseIPN, true));
+
 ?>
 
 <html>

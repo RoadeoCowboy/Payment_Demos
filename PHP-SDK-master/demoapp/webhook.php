@@ -22,7 +22,7 @@ $wepay = new WePay($access_token);
 // error_log($json_str);
 // error_log("Hello World");
 
-$json_str = $_POST['object_id'];
+$json_str = $_POST['checkout_id'];
 
 error_log($json_str);
 # Get as an object
@@ -32,11 +32,11 @@ $json_obj = json_decode($json_str);
 
 // echo $responseJSON;
 
-	$responseIPN = $wepay->request('checkout', array(
-		// 'checkout_id'	=> $response->checkout_id
-		'checkout_id' 	=> $json_obj->object_id
-	));
+$responseIPN = $wepay->request('checkout', array(
+	// 'checkout_id'	=> $response->checkout_id
+	'checkout_id' => $json_obj
+));
 
-	error_log(print_r($responseIPN, true));
+error_log(print_r($responseIPN, true));
 
 ?>
