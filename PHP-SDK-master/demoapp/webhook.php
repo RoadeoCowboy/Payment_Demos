@@ -22,21 +22,40 @@ $wepay = new WePay($access_token);
 // error_log($json_str);
 // error_log("Hello World");
 
-$json_str = $_POST['checkout_id'];
+echo "Hello World!";
 
-error_log($json_str);
+if(isset($_POST['checkout_id'])){
+	$responseIPN = $wepay->request('checkout', array(
+	// 'checkout_id'	=> $response->checkout_id
+	'checkout_id' => $_POST['checkout_id']
+));
+
+error_log(print_r($responseIPN, true));
+
+} 
+
+else if(isset($_POST['account_id'])){
+
+}
+
+else{
+
+}
+
+file_put_contents("/tmp/webhook.log", $responseIPN, FILE_APPEND);
+
+header("HTTP/1.1 200 OK");
+
+// $json_str = $_POST['object_id'];
+
+// error_log($json_str);
 # Get as an object
-$json_obj = json_decode($json_str);
+// $json_obj = json_decode($json_str);
 
 // $responseJSON = json_encode($json_str);
 
 // echo $responseJSON;
 
-$responseIPN = $wepay->request('checkout', array(
-	// 'checkout_id'	=> $response->checkout_id
-	'checkout_id' => $json_obj
-));
 
-error_log(print_r($responseIPN, true));
 
 ?>
