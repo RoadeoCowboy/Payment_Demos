@@ -34,7 +34,7 @@ try {
 			'short_description' => "this is a test payment", // a short description of what the payment is for
 			'type' => "goods", // the type of the payment - choose from 'goods', 'service', 'donation', 'event', or 'personal'
 			'hosted_checkout' => ['mode' => "iframe"], // user 'hosted_checkout' parameter if you want the checkout to be in an iframe, use 'payment_method' parameter instead if you want to use payment information your platform has previously aquired
-			'callback_uri' => "http://aqueous-taiga-51771.herokuapp.com/Payment_Demos/PHP-SDK-master/demoapp/webhook.php"
+			'callback_uri' => "https://aqueous-taiga-51771.herokuapp.com/PHP-SDK-master/demoapp/webhook.php"
 		)
 	);
 } catch (WePayException $e) { // if the API call returns an error, get the error message for display later
