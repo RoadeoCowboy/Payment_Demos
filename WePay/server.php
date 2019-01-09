@@ -4,7 +4,7 @@
 	require 'vendor/wepay/php-sdk/wepay.php';
 	// oauth2 parameters
 	$code = $_POST['code']; // the code parameter from step 2
-	error_log($code, 0);
+	error_log("Code is: " . $code, 0);
 	$redirect_uri = "http://localhost:8888/Payment_Demos/WePay/Account_Connected.html"; // this is the redirect_uri you used in step 1
 	// application settings
 	$client_id = 98172;
@@ -17,29 +17,29 @@
 	// display the response
 	// print_r($response);
 	$access_token = $response->access_token;
-	error_log($access_token);
+	error_log("Access Token is: " . $access_token);
 
 	$wepay = new WePay($access_token);
     // create an account for a user
     $response = $wepay->request('account/create/', array(
-        'name'          => 'Test Account',
+        'name'          => 'My New Account',
         'description'   => 'This is a test Connected Account.'
     ));
 
     $account_id = $response->account_id;
-    error_log($account_id);
+    error_log("Account_ID is: " . $account_id);
 
 	// $responseJSON = json_encode($response);
 
 	 // create the checkout
     $response = $wepay->request('checkout/create', array(
         'account_id'        => $account_id,
-        'amount'            => '24.95',
+        'amount'            => '59.95',
         'short_description' => 'Services rendered by freelancer',
         'type'              => 'service',
         'currency'          => 'USD',
         'hosted_checkout' => ['mode' => "iframe"],
-        'callback_uri' => 'http://aqueous-taiga-51771.herokuapp.com/Payment_Demos/PHP-SDK-master/demoapp/webhook.php'
+        'callback_uri' => 'http://aqueous-taiga-51771.herokuapp.com/PHP-SDK-master/demoapp/webhook.php'
     ));
 
     $responseJSON = json_encode($response);
